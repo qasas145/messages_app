@@ -1,5 +1,5 @@
 # messages_app
-message api app 
+chat api app 
 
 Installation
 
