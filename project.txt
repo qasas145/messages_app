@@ -1,0 +1,30 @@
+# control_user
+    -- authentication :
+        Authentication(BaseAuthentication) :
+            - def authenticate
+            - def get_user
+            - def validate_request
+            @staticmethod
+            - def verify_token
+    -- serliazers :
+        LoginSerializer :
+            - username
+            - password
+        RegisterSerializer :
+            - email 
+            - username 
+            - password
+        RefreshSerializer :
+            - refresh
+        UserProfileSerializer :
+            - message_count : serializers.SerializerMethodField("get_message_count")
+        FavoriteSerializer :
+            - favorite_id
+# message_control 
+    -- serializers :
+        GenericFileUploadSerializer 
+        MessageAttachmentSerializer
+        MessageSerializer :
+            - message_attachments MessageAttachmentSerializer
+            - def get_receiver_data
+            - get_sender_data
